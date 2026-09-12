@@ -61,7 +61,7 @@ npm run dev
 
 ## AGENTS.md
 
-Let’s create one for this project too. Place it in the repository root:
+Let’s create one for this project too. Place it in the repository root, then ask agent to make it relevant to the project:
 ```
 for backend, use uv for dependency management. a few useful commands:
 
@@ -73,6 +73,55 @@ regularly commit code to git
 ```
 
 ## OpenAPI Specifications
+
+But now we should define the specification - the agreement between frontend and backend.
+This specification gives explicit information about the endpoints, paths, request bodies, response bodies, and authentication rules.
+
+Ask agent:
+```
+Read the frontend's API client in frontend/
+
+Create openapi.yaml at the repository root.
+
+Specify the backend this frontend expects: every endpoint, method, path, request body, response body, and which endpoints need authentication.
+```
+
+## The Backend
+
+Now we have the OpenAPI specs and we can use this file to create the backend. We will use Python and FastAPI for that.
+
+For FastAPI backends, we start with a mocked database, and then later change it to the real one.
+
+Let’s ask the coding assistant to implement it:
+```
+Build a FastAPI backend in backend/ that implements the openapi.yaml spec.
+
+Use an in-memory store and seed it with data so the frontend has something to show. Add authentication with hashed passwords and bearer tokens for the endpoints that need it.
+
+Split the code into modules - routers, models, store, auth
+
+Write tests
+```
+
+## Makefile
+Normally, for FastAPI, the command to run the application is something like that:
+```
+cd backend
+uv run uvicorn backend.main:app --reload --port 8091
+```
+
+But it's easier to ask agent to create a Makefile:
+```
+Create a Makefile so I can easily run it.
+```
+
+Then running it is as simple as:
+```
+make run
+```
+
+http://localhost:8091/docs will have OpenAPI specification
+
 
 
 Information based on [Build and Ship a Full-Stack App with AI Coding Assistants. Part 2](https://aishippingblog.com/p/build-and-ship-a-full-stack-app-with) and [Build and Ship a Full-Stack App with AI Coding Assistants - Alexey Grigorev](https://www.youtube.com/watch?v=x9dq5nBpDg8) from [AI Dev Tools Zoomcamp: AI-Native Software Engineering](https://github.com/DataTalksClub/ai-dev-tools-zoomcamp)
