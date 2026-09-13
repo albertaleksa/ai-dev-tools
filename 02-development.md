@@ -31,6 +31,18 @@ implementation of it so the whole app runs without a real backend.
 Add tests.
 ```
 
+Or something like this in Codex:
+```
+Implement the frontend for the app described in _docs/specs.md. Put it in frontent/.
+ 
+Don't implement the backend yet. Centralize all the backend calls
+in one place (service layer), and create  a mock implementation for it.  so the whole app runs without a real backend.
+
+Make the UI interactive so I can use the main features from the spec.
+
+Add tests.
+```
+
 Lovable creates a React app in TypeScript. We can interact with it in the Lovable interface.
 
 Next, save it to GitHub. If you use Lovable:
