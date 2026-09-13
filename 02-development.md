@@ -122,6 +122,41 @@ make run
 
 http://localhost:8091/docs will have OpenAPI specification
 
+## Connecting Frontend and Backend
+Ask agent:
+```
+Switch the frontend to use the real backend client.
+```
+
+Run and test application.
+If something doesn’t work, describe and ask the agent to fix it.
+
+## Database
+
+At this point we have a working application with frontend and backend. They can connect to each other.
+
+But because we don’t have a real database yet, when the backend is restarted, all the data is lost.
+
+```
+Replace the in-memory store with a database. Use SQLite and SQLAlchemy.
+Use an environment variable to configure which DB the server should connect to.
+Make it database-agnostic - later we will add support for other databases (e.g. Postgres).
+```
+
+Now we a have working app with SQLite database.
+If something doesn't work, ask the coding agent to fix it.
+
+## Ready for Deployment
+
+We have a working app:
+- from idea created a specification
+- created frontend
+- defined the API contract
+- implemented the backend from the contract
+- connected backend and frontend
+- added SQLite for persistence
+
+But this application is only working locally. Next, we need to deploy it.
 
 
 Information based on [Build and Ship a Full-Stack App with AI Coding Assistants. Part 2](https://aishippingblog.com/p/build-and-ship-a-full-stack-app-with) and [Build and Ship a Full-Stack App with AI Coding Assistants - Alexey Grigorev](https://www.youtube.com/watch?v=x9dq5nBpDg8) from [AI Dev Tools Zoomcamp: AI-Native Software Engineering](https://github.com/DataTalksClub/ai-dev-tools-zoomcamp)
