@@ -171,4 +171,58 @@ We have a working app:
 But this application is only working locally. Next, we need to deploy it.
 
 
+
+
+## Write Readme
+
+I asked agent:
+```
+Could you create a good README for my application? If it's possible I'd like to include the information, that
+answers next questions:
+1) What is this project?
+The beginning of the README should answer three questions:
+
+Who is the project for?
+What problem does it solve?
+What did you build to solve it?
+
+Use the title and short description to provide the immediate answer. Then explain the problem in more detail and
+show how the project works.
+
+2) Does it work well?
+Evaluation: How well does the system perform?
+Testing: Does the software behave as expected?
+Monitoring: What happens when the application processes real requests?
+
+3) Can I run and reproduce it?
+
+After readers understand what the project does and how well it performs, they may want to run it themselves.
+Quickstart
+Data and configuration
+Deployment
+
+
+4) How was it built?
+the implementation in more detail.
+Architecture
+Project structure
+Decisions and trade-offs
+CI/CD
+
+
+P.S. Nice to have: What is the project scope and its limitations?
+A good README also helps readers understand where it stops.
+
+Describing these boundaries shows that you can assess your own work realistically and distinguish between what
+you implemented, tested, and only considered.
+
+Limitations
+Future work
+Self-evaluation
+
+
+If I don't have some of the parts or you think they are not necessary for Readme you can omit them.
+```
+
+
 Information based on [Build and Ship a Full-Stack App with AI Coding Assistants. Part 2](https://aishippingblog.com/p/build-and-ship-a-full-stack-app-with) and [Build and Ship a Full-Stack App with AI Coding Assistants - Alexey Grigorev](https://www.youtube.com/watch?v=x9dq5nBpDg8) from [AI Dev Tools Zoomcamp: AI-Native Software Engineering](https://github.com/DataTalksClub/ai-dev-tools-zoomcamp)
