@@ -128,6 +128,58 @@ make e2e
 
 ## Deploy to AWS
 
+To deploy we can use Render, Railway, Fly.io, or any other managed container system.
+You can ask the coding assistant to recommend an environment for your application:
+```
+Now I want to deploy an application. What are the options I have?
+```
+
+Ask your assistant to deploy it:
+```
+Deploy this application to AWS. Use AWS CloudFormation.
+```
+For that to work, you need to have an AWS user. 
+
+## CI/CD with GitHub Actions
+
+We used a user with the admin permissions to deploy the application. It’s okay for the first deployment, but only when we carefully watch it. The next step is to configure CI/CD and remove that access.
+
+- Continuous integration (CI) means that every time we make a change and push it to GitHub, we automatically run all the tests to make sure we didn’t break anything.
+- Continuous deployment (CD) is about deploying this change automatically.
+- 
+In GitHub, we use GitHub Actions for that.
+
+Let’s configure it. Every time we make a push to main, we want to:
+- run frontend and backend tests
+- build the containers
+- run the integration tests
+- run the end-to-end tests
+- if all the tests pass, deploy the new version
+
+For the last step, the runner (the process that will deploy the application) will need to be able to access our AWS infrastructure. We will use OpenID Connect (OIDC) for this: the runner will assume a role with the necessary permissions and update the application.
+
+Create the role and the workflow:
+```
+Create a CI/CD pipeline that:
+
+- runs backend and frontend tests in parallel
+- builds the Docker Compose stack and runs integration and end-to-end tests against it
+- deploys to AWS using a GitHub OIDC role
+- validates that the deploy is successful by checking the health endpoint
+```
+
+Ask agent to add this role to the CloudFormation and make sure that this role has the least amount of permissions it needs do the development, no extra rights.
+
+Then disable admin permissions for the agent that it can deploy only using CI/CD.
+
+## Clean up
+
+When we’re done, we need to delete all the resources created by CloudFormation:
+```
+aws cloudformation delete-stack --stack-name <stack-name>
+aws cloudformation wait stack-delete-complete --stack-name <stack-name>
+```
+
 
 
 Information based on [Deploy a Full-Stack App with AI Coding Assistants. Part 3](https://aishippingblog.com/p/deploy-a-full-stack-app-with-ai-coding) and [Test, Containerize, and Deploy an AI-Assisted App - Alexey Grigorev]([https://www.youtube.com/watch?v=x9dq5nBpDg8](https://www.youtube.com/watch?v=gxt5ZDVnBMM)) from [AI Dev Tools Zoomcamp: AI-Native Software Engineering](https://github.com/DataTalksClub/ai-dev-tools-zoomcamp)
