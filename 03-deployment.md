@@ -36,14 +36,16 @@ This means we don’t need a separate container for the frontend: the backend ca
 
 Ask a coding agent to create a Docker container:
 ```
-Create a Dockerfile that builds the frontend with Node, then builds a Python image with the backend and the frontend static files.
+Create a Dockerfile that builds the frontend with Node,
+then builds a Python image with the backend and the frontend static files.
 
 Backend should serve the frontend.
 ```
 
 Ask coding agent to build a Dockerfile:
 ```
-I want you to build a Dockerfile from Dockerfile and run it. Update README.md file and put there instructions for running and building a Dockerfile.
+I want you to build a Dockerfile from Dockerfile and run it.
+Update README.md file and put there instructions for running and building a Dockerfile.
 ```
 
 Now we can build and run the image.
@@ -102,7 +104,8 @@ The AI assistant might have created some backend tests.
 
 If it didn’t, ask it to create integration tests:
 ```
-Create integration tests that run against docker-compose.yaml. What scenarios should we test?
+Create integration tests that run against docker-compose.yaml.
+What scenarios should we test?
 ```
 
 Ask the AI assistant to implement an end-to-end test (example):
