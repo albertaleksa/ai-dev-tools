@@ -11,7 +11,8 @@ In this article, we’ll make this deployment production-ready:
 - Create an alert when the metrics change
 - Use an AI agent as the on-call responder for the alerts
 
-<img width="701" height="183" alt="image" src="/devops.png" />
+
+<img alt="image" src="/devops.png" />
 
 ## Recap
 
