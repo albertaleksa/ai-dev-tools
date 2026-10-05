@@ -185,4 +185,4 @@ aws cloudformation wait stack-delete-complete --stack-name <stack-name>
 
 
 
-Information based on [Deploy a Full-Stack App with AI Coding Assistants. Part 3](https://aishippingblog.com/p/deploy-a-full-stack-app-with-ai-coding) and [Test, Containerize, and Deploy an AI-Assisted App - Alexey Grigorev]([https://www.youtube.com/watch?v=x9dq5nBpDg8](https://www.youtube.com/watch?v=gxt5ZDVnBMM)) from [AI Dev Tools Zoomcamp: AI-Native Software Engineering](https://github.com/DataTalksClub/ai-dev-tools-zoomcamp)
+Information based on [Deploy a Full-Stack App with AI Coding Assistants. Part 3](https://aishippingblog.com/p/deploy-a-full-stack-app-with-ai-coding) and [Test, Containerize, and Deploy an AI-Assisted App - Alexey Grigorev](https://www.youtube.com/watch?v=gxt5ZDVnBMM) from [AI Dev Tools Zoomcamp: AI-Native Software Engineering](https://github.com/DataTalksClub/ai-dev-tools-zoomcamp)
