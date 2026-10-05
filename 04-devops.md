@@ -33,8 +33,12 @@ In part 3:
 
 ## Dev and prod environments
 
+To avoid having this problem, we usually have two copies of the same environment:
 
+- Dev (development): the environment we use internally for checking that everything works. Typically we run the latest version of our project there, and every time we push, the changes are automatically deployed there.
+- Prod (production): this is what our users use. We don’t want to deploy every single change there automatically and we want to have more control over the process.
 
+<img alt="image" src="/dev-prod.png" />
 
 
 Information based on [DevOps and Observability for an AI-Built App. Part 4](https://aishippingblog.com/p/devops-and-observability-for-an-ai) and [DevOps and Observability for AI-Built Apps - Alexey Grigorev](https://www.youtube.com/watch?v=YkxLo_FRoQw) from [AI Dev Tools Zoomcamp: AI-Native Software Engineering](https://github.com/DataTalksClub/ai-dev-tools-zoomcamp)
